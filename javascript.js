@@ -615,7 +615,6 @@ while (itensMaximo > 1 && pesoMaximo > 1 && ouroInicial > 1) {
     itensMaximo -= 1;
 }
 
-
 bolsa.push(arma);
 bolsa.push(armadura);
 
