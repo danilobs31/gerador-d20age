@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GERADOR</title>
+    <link rel="stylesheet" href="style.css">
     <script src="./javascript.js"></script>
 </head>
 
@@ -45,6 +46,8 @@
     <div class="atributos2">
         <p><strong>Classe de Armadura:</strong> <span id="ca"></span></p>
         <p><strong>Pontos de Vida:</strong> <span id="pv"></span></p>
+        <p><strong>Bonus de ataque:</strong> <span id="ba"></span></p>
+        <p><strong>THAC0:</strong> <span id="thac0"></span></p>
     </div>
     <div class="salvaguardas">
         <p><strong>Morte:</strong> <span id="morte"></span></p>
@@ -61,6 +64,10 @@
 
     </div>
     <div class="equipamento">
+        <p><strong>Itens:</strong>
+        <ul id="listaItens">
+        </ul>
+        <p><strong>Carga:</strong> <span id="carga"></span></p>
         <p><strong>Ouro:</strong> <span id="ouro"></span></p>
     </div>
     <div class="notas">
@@ -95,8 +102,26 @@
     document.getElementById('idiomas').textContent = "Comum, " + idioma;
     document.getElementById('alinhamento').textContent = alinhamento;
     document.getElementById('pv').textContent = vida;
+    document.getElementById('ba').textContent = classe.bonusAtaque;
+    document.getElementById('thac0').textContent = classe.thac0;
+    document.getElementById('ca').textContent = classeArmadura;
     document.getElementById('notas').textContent = anotacoes;
     document.getElementById('ouro').textContent = ouroInicial;
+    document.getElementById('carga').textContent = carga;
+
+
+    const listaItensElement = document.getElementById('listaItens');
+    listaItensElement.innerHTML = '';
+    bolsa.forEach(item => {
+        const itemElement = document.createElement('li');
+        const itemName = item.nome;
+        const itemPeso = item.peso ? `[${item.peso} cn]` : '';
+        const itemText = document.createTextNode(`${itemName} ${itemPeso}`);
+        itemElement.appendChild(itemText);
+        listaItensElement.appendChild(itemElement);
+    });
+
+
 </script>
 </body>
 

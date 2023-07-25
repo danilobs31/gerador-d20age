@@ -413,7 +413,7 @@ const itens = [
 ];
 
 const armaduras = [
-    { nome: 'Sem', preco: 0, bonus: 10, nota: '-', peso: '-', CA: 9 },
+    { nome: 'Sem armadura', preco: 0, bonus: 0, nota: 'Sem armadura', peso: 0, CA: 9 },
     { nome: 'Couro simples', preco: 10, bonus: 1, nota: 'couro simples de animais comuns', peso: 100, CA: 8 },
     { nome: 'Couro fervido', preco: 20, bonus: 2, nota: 'couro feito de forma especializada', peso: 200, CA: 7 },
     { nome: 'Lamelar', preco: 40, bonus: 3, nota: 'couro fervido e lâminas de metal', peso: 300, CA: 6 },
@@ -426,9 +426,9 @@ const armaduras = [
 const armas = [
     { nome: 'Adaga', preco: 3, peso: 10, categoria: 'Armas simples', dano: 'd4' },
     { nome: 'Machadinha', preco: 1, peso: 30, categoria: 'Armas simples', dano: 'd4' },
-    { nome: 'Cajado', preco: 2, peso: 30, categoria: 'Médias', dano: 'd8' },
-    { nome: 'Clava', preco: 1, peso: 40, categoria: 'Médias', dano: 'd8' },
-    { nome: 'Funda', preco: 1, peso: 1, categoria: 'Médias', dano: 'd8' },
+    { nome: 'Cajado', preco: 2, peso: 30, categoria: 'Armas simples', dano: 'd4' },
+    { nome: 'Clava', preco: 1, peso: 40, categoria: 'Armas simples', dano: 'd4' },
+    { nome: 'Funda', preco: 1, peso: 1, categoria: 'Armas simples', dano: 'd4' },
     { nome: 'Azagaia', preco: 2, peso: 20, categoria: 'Armas leves', dano: 'd6' },
     { nome: 'Espada curta', preco: 7, peso: 30, categoria: 'Armas leves', dano: 'd6' },
     { nome: 'Maça', preco: 5, peso: 40, categoria: 'Armas leves', dano: 'd6' },
@@ -456,6 +456,12 @@ let marcaArcana = ` mas como efeito colateral ${marcas[(rolarDados(1, 20) - 1)]}
 let pericias = ["Acurácia", `usar ${armas[(rolarDados(1, 20) - 1)].nome}`, "Arcanismo", "Decifrar", "Escalar", "Esconder", "Furtividade", "Idioma", "Sobressaltar", "Punga"];
 let pericia = ` e é perito em ${pericias[(rolarDados(1, 10) - 1)]}.`;
 let traco = tracos[(rolarDados(1, 36) - 1)];
+let armadura = [];
+let arma = [];
+let ca1 = 0;
+let ca2 = 10;
+let escudo = null;
+
 
 let atributos = {
     forca: rolarDados(3, 6),
@@ -478,6 +484,8 @@ let modificadores = {
 let combatente = {
     xpMeta: 2000,
     vida: 8,
+    bonusAtaque: 1,
+    thac0: 18,
     morte: 12,
     contato: 13,
     paralisia: 14,
@@ -489,6 +497,8 @@ let combatente = {
 let arcanista = {
     xpMeta: 2500,
     vida: 4,
+    bonusAtaque: 0,
+    thac0: 19,
     morte: 13,
     contato: 14,
     paralisia: 15,
@@ -500,6 +510,8 @@ let arcanista = {
 let especialista = {
     xpMeta: 1250,
     vida: 6,
+    bonusAtaque: 0,
+    thac0: 19,
     morte: 13,
     contato: 13,
     paralisia: 15,
@@ -546,21 +558,80 @@ ${traco}
 `;
 const idioma = itensAleatorios(linguas, idiomas);
 const nomeChar = `${itensAleatorios(nomes, 1)} '${itensAleatorios(codinome, 1)}' ${itensAleatorios(sobrenomes, 1)}`
-const ouroInicial = (rolarDados(3, 6) * 10);
+let ouroInicial = (rolarDados(3, 6) * 10);
+
+let armadurasBaratas = armaduras.filter(armaduras => armaduras.preco < ouroInicial);
+let armadurasDisponiveis = armadurasBaratas.filter(armadura => armadura.nome !== "Escudo" && armadura.nome !== "Sem armadura");
+
+if (classe === arcanista) {
+    armadura = armaduras.find(armadura => armadura.nome === "Sem armadura");
+} else {
+    const armaduraSelecionada = itensAleatorios(armadurasDisponiveis, 1)[0];
+    armadura = armaduraSelecionada;
+    ouroInicial = ouroInicial - armaduraSelecionada.preco;
+}
+
+let armasBaratas = armas.filter(armas => armas.preco < ouroInicial);
+let armasArcanista = armasBaratas.filter(armas => armas.categoria === "Armas simples")
+
+if (classe === arcanista) {
+    const armaSelecionada = itensAleatorios(armasArcanista, 1)[0];
+    arma = armaSelecionada;
+    ouroInicial = ouroInicial - armaSelecionada.preco;
+} else {
+    const armaSelecionada = itensAleatorios(armasBaratas, 1)[0];
+    arma = armaSelecionada;
+    ouroInicial = ouroInicial - armaSelecionada.preco;
+}
+
+if (arma.categoria === "Armas leves") {
+    escudo = armaduras.find(armadura => armadura.nome === "Escudo");
+    ouroInicial = ouroInicial - escudo.preco;
+}
 
 
-console.log(maiorAtributo);
-console.log(atributos);
-console.log(modificadores);
-console.log(classeD);
-console.log(vida);
-console.log(alinhamento);
-console.log(anotacoes);
-console.log(idioma);
-console.log(ouroInicial);
+let bolsa = [];
+let pesoMaximo = 400 - arma.peso - armadura.peso;
+let itensMaximo = 5;
+
+while (itensMaximo > 1 && pesoMaximo > 1 && ouroInicial > 1) {
+    // Filtra os itens com peso menor ou igual a pesoMaximo e preço menor ou igual a ouroInicial
+    const itensDisponiveis = itens.filter(item => item.peso <= pesoMaximo && item.preco <= ouroInicial);
+
+    // Verifica se há itens disponíveis que atendam aos critérios
+    if (itensDisponiveis.length === 0) {
+        break;
+    }
+
+    // Seleciona um item aleatório entre os itens disponíveis
+    const itemSelecionado = itensDisponiveis[Math.floor(Math.random() * itensDisponiveis.length)];
+
+    // Adiciona o item à bolsa
+    bolsa.push(itemSelecionado);
+
+    // Atualiza pesoMaximo e ouroInicial após adicionar o item à bolsa
+    pesoMaximo -= itemSelecionado.peso;
+    ouroInicial -= itemSelecionado.preco;
+    itensMaximo -= 1;
+}
 
 
+bolsa.push(arma);
+bolsa.push(armadura);
+
+const carga = `${bolsa.reduce((total, item) => total + item.peso, 0)} Cn`;
 
 
+ca1 = armadura.CA;
+ca2 = 10 + armadura.bonus;
+
+if (escudo != null) {
+    ca1 = armadura.CA - escudo.CA;
+    ca2 = 10 + armadura.bonus + escudo.bonus;
+    bolsa.push(escudo);
+}
 
 
+let classeArmadura = `${ca1}(${ca2})`;
+
+console.log(escudo);
