@@ -10,68 +10,65 @@
 </head>
 
 <body>
-    <div class="caracteristicas">
-        <p><strong>Nome:</strong> <span id="nome"></span></p>
-        <p><strong>Classe:</strong> <span id="classe"></span></p>
-        <p><strong>Nível:</strong> <span id="nivel"></span></p>
-        <p><strong>Alinhamento:</strong> <span id="alinhamento"></span></p>
-        <p><strong>Xp Meta:</strong> <span id="xpMeta"></span></p>
-    </div>
-    <div class="atributos">
-        <div class="forca">
-            <p><strong>Força:</strong> <span id="forca"></span> (<span id="modforca"></span>)</p>
+    <div class="personagem">
+        <div class="caracteristicas">
+            <span id="nome"></span></p>
+            <hr class="linha-separadora">
+            <p><strong>Classe:</strong> <span id="classe"></span></p>
+            <p><strong>Nível:</strong> <span id="nivel"></span></p>
+            <p><strong>Alinhamento:</strong> <span id="alinhamento"></span></p>
         </div>
-
-        <div class="inteligencia">
-            <p><strong>Inteligência:</strong> <span id="inteligencia"></span> (<span id="modinteligencia"></span>)</p>
+        <div class="atributos2">
+            <p><strong>CA:</strong> <span id="ca"></span></p>
+            <p><strong>PVs:</strong> <span id="pv"></span></p>
+            <p><strong>BA:</strong> <span id="ba"></span></p>
+            <p><strong>THAC0:</strong> <span id="thac0"></span></p>
         </div>
-
-        <div class="sabedoria">
-            <p><strong>Sabedoria:</strong> <span id="sabedoria"></span> (<span id="modsabedoria"></span>)</p>
+        <hr class="linha-separadora">
+        <div class="atributos">
+            <table>
+                <tr>
+                    <th>FOR</th>
+                    <th>INT</th>
+                    <th>SAB</th>
+                    <th>DES</th>
+                    <th>CON</th>
+                    <th>CAR</th>
+                </tr>
+                <tr>
+                    <td><span id="forca"></span> (<span id="modforca"></span>)</td>
+                    <td><span id="inteligencia"></span> (<span id="modinteligencia"></span>)</td>
+                    <td><span id="sabedoria"></span> (<span id="modsabedoria"></span>)</td>
+                    <td><span id="destreza"></span> (<span id="moddestreza"></span>)</td>
+                    <td><span id="constituicao"></span> (<span id="modconstituicao"></span>)</td>
+                    <td><span id="carisma"></span> (<span id="modcarisma"></span>)</td>
+                </tr>
+            </table>
         </div>
-
-        <div class="destreza">
-            <p><strong>Destreza:</strong> <span id="destreza"></span> (<span id="moddestreza"></span>)</p>
+        <hr class="linha-separadora">
+        <div class="salvaguardas">
+            <h1>Salvaguardas</h1>
+            <p><strong>Morte:</strong> <span id="morte"></span></p>
+            <p><strong>Contato:</strong> <span id="contato"></span></p>
+            <p><strong>Paralisia:</strong> <span id="paralisia"></span></p>
+            <p><strong>Irrupção:</strong> <span id="irrupcao"></span></p>
+            <p><strong>Feitiço:</strong> <span id="feitico"></span></p>
         </div>
+        <hr class="linha-separadora">
+        <div class="idiomas"></div>
+        <p><strong>Letrado:</strong> <span id="letrado"></span></p>
+        <p><strong>Idiomas:</strong> <span id="idiomas"></span></p>
+        <div class="armas">
 
-        <div class="constituicao">
-            <p><strong>Constituição:</strong> <span id="constituicao"></span> (<span id="modconstituicao"></span>)</p>
         </div>
-
-        <div class="carisma">
-            <p><strong>Carisma:</strong> <span id="carisma"></span> (<span id="modcarisma"></span>)</p>
+        <div class="equipamento">
+            <p><strong>Itens:</strong> <span id="itens"></span></p>
+            <p><strong>Carga:</strong> <span id="carga"></span></p>
+            <p><strong>Ouro:</strong> <span id="ouro"></span></p>
         </div>
-    </div>
-
-    <div class="atributos2">
-        <p><strong>Classe de Armadura:</strong> <span id="ca"></span></p>
-        <p><strong>Pontos de Vida:</strong> <span id="pv"></span></p>
-        <p><strong>Bonus de ataque:</strong> <span id="ba"></span></p>
-        <p><strong>THAC0:</strong> <span id="thac0"></span></p>
-    </div>
-    <div class="salvaguardas">
-        <p><strong>Morte:</strong> <span id="morte"></span></p>
-        <p><strong>Contato:</strong> <span id="contato"></span></p>
-        <p><strong>Paralisia:</strong> <span id="paralisia"></span></p>
-        <p><strong>Irrupção:</strong> <span id="irrupcao"></span></p>
-        <p><strong>Feitiço:</strong> <span id="feitico"></span></p>
-    </div>
-    <div class="arte"></div>
-    <div class="idiomas"></div>
-    <p><strong>Letrado:</strong> <span id="letrado"></span></p>
-    <p><strong>Idiomas:</strong> <span id="idiomas"></span></p>
-    <div class="armas">
-
-    </div>
-    <div class="equipamento">
-        <p><strong>Itens:</strong>
-        <ul id="listaItens">
-        </ul>
-        <p><strong>Carga:</strong> <span id="carga"></span></p>
-        <p><strong>Ouro:</strong> <span id="ouro"></span></p>
-    </div>
-    <div class="notas">
-        <p><strong>Anotações:</strong> <span id="notas"></span></p>
+        <div class="notas">
+            <p><strong>Anotações:</strong> <span id="notas"></span></p>
+        </div>
     </div>
 </body>
 
@@ -92,7 +89,6 @@
     document.getElementById('moddestreza').textContent = modificadores.destreza;
     document.getElementById('modconstituicao').textContent = modificadores.constituicao;
     document.getElementById('modcarisma').textContent = modificadores.carisma;
-    document.getElementById('xpMeta').textContent = classe.xpMeta;
     document.getElementById('morte').textContent = classe.morte;
     document.getElementById('contato').textContent = classe.contato;
     document.getElementById('paralisia').textContent = classe.paralisia;
@@ -109,17 +105,16 @@
     document.getElementById('ouro').textContent = ouroInicial;
     document.getElementById('carga').textContent = carga;
 
+    function formatarPeso(peso) {
+        return `[${peso} cn]`;
+    }
+    function formatarItens(itens) {
+        return itens.map(item => `${item.nome} ${formatarPeso(item.peso)}`).join(', ');
+    }
 
-    const listaItensElement = document.getElementById('listaItens');
-    listaItensElement.innerHTML = '';
-    bolsa.forEach(item => {
-        const itemElement = document.createElement('li');
-        const itemName = item.nome;
-        const itemPeso = item.peso ? `[${item.peso} cn]` : '';
-        const itemText = document.createTextNode(`${itemName} ${itemPeso}`);
-        itemElement.appendChild(itemText);
-        listaItensElement.appendChild(itemElement);
-    });
+    const divItens = document.getElementById('itens');
+    divItens.textContent = formatarItens(bolsa);
+
 
 
 </script>
