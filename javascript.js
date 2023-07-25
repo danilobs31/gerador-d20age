@@ -546,7 +546,7 @@ ${traco}
 `;
 const idioma = itensAleatorios(linguas, idiomas);
 const nomeChar = `${itensAleatorios(nomes, 1)} '${itensAleatorios(codinome, 1)}' ${itensAleatorios(sobrenomes, 1)}`
-const ouro = (rolarDados(3, 6) * 10);
+const ouroInicial = (rolarDados(3, 6) * 10);
 
 
 console.log(maiorAtributo);
@@ -557,7 +557,7 @@ console.log(vida);
 console.log(alinhamento);
 console.log(anotacoes);
 console.log(idioma);
-console.log(ouro);
+console.log(ouroInicial);
 
 
 
