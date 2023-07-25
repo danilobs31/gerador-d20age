@@ -10,68 +10,78 @@
 </head>
 
 <body>
-    <div class="caracteristicas">
-        <p><strong>Nome:</strong> <span id="nome"></span></p>
-        <p><strong>Classe:</strong> <span id="classe"></span></p>
-        <p><strong>Nível:</strong> <span id="nivel"></span></p>
-        <p><strong>Alinhamento:</strong> <span id="alinhamento"></span></p>
-        <p><strong>Xp Meta:</strong> <span id="xpMeta"></span></p>
-    </div>
-    <div class="atributos">
-        <div class="forca">
-            <p><strong>Força:</strong> <span id="forca"></span> (<span id="modforca"></span>)</p>
+    <div class="personagem">
+        <div class="caracteristicas">
+            <p><strong>Nome:</strong> <span id="nome"></span></p>
+            <p><strong>Classe:</strong> <span id="classe"></span></p>
+            <p><strong>Nível:</strong> <span id="nivel"></span></p>
+            <p><strong>Alinhamento:</strong> <span id="alinhamento"></span></p>
+            <p><strong>Xp Meta:</strong> <span id="xpMeta"></span></p>
+        </div>
+        <div class="conteiner">
+            <div class="atributos">
+                <div class="forca">
+                    <p><strong>Força:</strong> <span id="forca"></span> (<span id="modforca"></span>)</p>
+                </div>
+
+                <div class="inteligencia">
+                    <p><strong>Inteligência:</strong> <span id="inteligencia"></span> (<span
+                            id="modinteligencia"></span>)
+                    </p>
+                </div>
+
+                <div class="sabedoria">
+                    <p><strong>Sabedoria:</strong> <span id="sabedoria"></span> (<span id="modsabedoria"></span>)</p>
+                </div>
+
+                <div class="destreza">
+                    <p><strong>Destreza:</strong> <span id="destreza"></span> (<span id="moddestreza"></span>)</p>
+                </div>
+
+                <div class="constituicao">
+                    <p><strong>Constituição:</strong> <span id="constituicao"></span> (<span
+                            id="modconstituicao"></span>)
+                    </p>
+                </div>
+
+                <div class="carisma">
+                    <p><strong>Carisma:</strong> <span id="carisma"></span> (<span id="modcarisma"></span>)</p>
+                </div>
+            </div>
+            <div class="salvaguardas">
+                <p><strong>Morte:</strong> <span id="morte"></span></p>
+                <p><strong>Contato:</strong> <span id="contato"></span></p>
+                <p><strong>Paralisia:</strong> <span id="paralisia"></span></p>
+                <p><strong>Irrupção:</strong> <span id="irrupcao"></span></p>
+                <p><strong>Feitiço:</strong> <span id="feitico"></span></p>
+            </div>
+            <div class="atributos2">
+                <p><strong>Classe de Armadura:</strong> <span id="ca"></span></p>
+                <p><strong>Pontos de Vida:</strong> <span id="pv"></span></p>
+                <p><strong>Bonus de ataque:</strong> <span id="ba"></span></p>
+                <p><strong>THAC0:</strong> <span id="thac0"></span></p>
+            </div>
         </div>
 
-        <div class="inteligencia">
-            <p><strong>Inteligência:</strong> <span id="inteligencia"></span> (<span id="modinteligencia"></span>)</p>
+
+        <div class="arte"></div>
+        <div class="idiomas">
+            <p><strong>Letrado:</strong> <span id="letrado"></span></p>
+            <p><strong>Idiomas:</strong> <span id="idiomas"></span></p>
         </div>
+        <div class="armas">
 
-        <div class="sabedoria">
-            <p><strong>Sabedoria:</strong> <span id="sabedoria"></span> (<span id="modsabedoria"></span>)</p>
         </div>
-
-        <div class="destreza">
-            <p><strong>Destreza:</strong> <span id="destreza"></span> (<span id="moddestreza"></span>)</p>
+        <div class="equipamento">
+            <p><strong>Itens:</strong>
+            <ul id="listaItens">
+            </ul>
+            <p><strong>Carga:</strong> <span id="carga"></span></p>
+            <p><strong>Ouro:</strong> <span id="ouro"></span></p>
         </div>
-
-        <div class="constituicao">
-            <p><strong>Constituição:</strong> <span id="constituicao"></span> (<span id="modconstituicao"></span>)</p>
+        <div class="notas">
+            <p><strong>Anotações:</strong> <span id="notas"></span></p>
         </div>
-
-        <div class="carisma">
-            <p><strong>Carisma:</strong> <span id="carisma"></span> (<span id="modcarisma"></span>)</p>
-        </div>
-    </div>
-
-    <div class="atributos2">
-        <p><strong>Classe de Armadura:</strong> <span id="ca"></span></p>
-        <p><strong>Pontos de Vida:</strong> <span id="pv"></span></p>
-        <p><strong>Bonus de ataque:</strong> <span id="ba"></span></p>
-        <p><strong>THAC0:</strong> <span id="thac0"></span></p>
-    </div>
-    <div class="salvaguardas">
-        <p><strong>Morte:</strong> <span id="morte"></span></p>
-        <p><strong>Contato:</strong> <span id="contato"></span></p>
-        <p><strong>Paralisia:</strong> <span id="paralisia"></span></p>
-        <p><strong>Irrupção:</strong> <span id="irrupcao"></span></p>
-        <p><strong>Feitiço:</strong> <span id="feitico"></span></p>
-    </div>
-    <div class="arte"></div>
-    <div class="idiomas"></div>
-    <p><strong>Letrado:</strong> <span id="letrado"></span></p>
-    <p><strong>Idiomas:</strong> <span id="idiomas"></span></p>
-    <div class="armas">
-
-    </div>
-    <div class="equipamento">
-        <p><strong>Itens:</strong>
-        <ul id="listaItens">
-        </ul>
-        <p><strong>Carga:</strong> <span id="carga"></span></p>
-        <p><strong>Ouro:</strong> <span id="ouro"></span></p>
-    </div>
-    <div class="notas">
-        <p><strong>Anotações:</strong> <span id="notas"></span></p>
     </div>
 </body>
 
