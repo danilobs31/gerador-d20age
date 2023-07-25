@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GERADOR</title>
+    <script src="./javascript.js"></script>
+</head>
+
+<body>
+    <div class="caracteristicas">
+        <p>Nome: <span id="nome"></span></p>
+        <p>Classe: <span id="classe"></span></p>
+        <p>Nível: <span id="nivel"></span></p>
+        <p>Alinhamento: <span id="alinhamento"></span></p>
+        <p>Xp Meta: <span id="xpMeta"></span></p>
+    </div>
+    <div class="atributos">
+        <div class="forca">
+            <p>Força: <span id="forca"></span></p>
+            <p><span id="modforca"></span></p>
+        </div>
+
+        <div class="inteligencia">
+            <p>Inteligência: <span id="inteligencia"></span></p>
+            <p><span id="modinteligencia"></span></p>
+        </div>
+
+        <div class="sabedoria">
+            <p>Sabedoria: <span id="sabedoria"></span></p>
+            <p><span id="modsabedoria"></span></p>
+        </div>
+
+        <div class="destreza">
+            <p>Destreza: <span id="destreza"></span></p>
+            <p><span id="moddestreza"></span></p>
+        </div>
+
+        <div class="constituicao">
+            <p>Constituição: <span id="constituicao"></span></p>
+            <p><span id="modconstituicao"></span></p>
+        </div>
+
+        <div class="carisma">
+            <p>Carisma: <span id="carisma"></span></p>
+            <p><span id="modcarisma"></span></p>
+        </div>
+    </div>
+    <div class="atributos2">
+        <p>Classe de Armadura: <span id="ca"></span></p>
+        <p>Pontos de Vida: <span id="pv"></span></p>
+    </div>
+    <div class="salvaguardas">
+        <p>Morte:<span id="morte"></span></p>
+        <p>Contato:<span id="contato"></span></p>
+        <p>Paralisia:<span id="paralisia"></span></p>
+        <p>Irrupção:<span id="irrupcao"></span></p>
+        <p>Feitiço:<span id="feitico"></span></p>
+    </div>
+    <div class="arte"></div>
+    <div class="idiomas"></div>
+    <p>Letrado:<span id="letrado"></span></p>
+    <p>Idiomas:<span id="idiomas"></span></p>
+    <div class="armas"></div>
+    <div class="equipamento"></div>
+    <div class="notas">
+        <p>Anotações:<span id="notas"></span></p>
+    </div>
+
+    <script>
+        document.getElementById('nome').textContent = nomeChar;
+        document.getElementById('forca').textContent = atributos.forca;
+        document.getElementById('inteligencia').textContent = atributos.inteligencia;
+        document.getElementById('sabedoria').textContent = atributos.sabedoria;
+        document.getElementById('destreza').textContent = atributos.destreza;
+        document.getElementById('constituicao').textContent = atributos.constituicao;
+        document.getElementById('carisma').textContent = atributos.carisma;
+        document.getElementById('classe').textContent = classeD;
+        document.getElementById('nivel').textContent = "1";
+        document.getElementById('modforca').textContent = modificadores.forca;
+        document.getElementById('modinteligencia').textContent = modificadores.inteligencia;
+        document.getElementById('modsabedoria').textContent = modificadores.sabedoria;
+        document.getElementById('moddestreza').textContent = modificadores.destreza;
+        document.getElementById('modconstituicao').textContent = modificadores.constituicao;
+        document.getElementById('modcarisma').textContent = modificadores.carisma;
+        document.getElementById('xpMeta').textContent = classe.xpMeta;
+        document.getElementById('morte').textContent = classe.morte;
+        document.getElementById('contato').textContent = classe.contato;
+        document.getElementById('paralisia').textContent = classe.paralisia;
+        document.getElementById('irrupcao').textContent = classe.irrupcao;
+        document.getElementById('feitico').textContent = classe.feitico;
+        document.getElementById('letrado').textContent = letrado;
+        document.getElementById('idiomas').textContent = "Comum, " + idioma;
+        document.getElementById('alinhamento').textContent = alinhamento;
+        document.getElementById('pv').textContent = vida;
+        document.getElementById('notas').textContent = anotacoes;
+    </script>
+</body>
+
+</html>
