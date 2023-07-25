@@ -254,28 +254,6 @@ const codinome = [
     "Dragão da Lua",
 ];
 
-const armas = [
-    "Adaga",
-    "Machadinha",
-    "Cajado",
-    "Clava",
-    "Funda",
-    "Azagaia",
-    "Espada Curta",
-    "Maça",
-    "Espada Longa",
-    "Lança",
-    "Machado de Batalha",
-    "Martelo de Batalha",
-    "Alabarda",
-    "Martelo de Guerra",
-    "Machado de Guerra",
-    "Montante",
-    "Arco Curto",
-    "Besta Leve",
-    "Arco Longo",
-    "Besta"
-];
 const magias = [
     "Aferrolhar",
     "Emaranhar",
@@ -367,14 +345,115 @@ const linguas = [
     "Trasgo"
 ];
 
+const itens = [
+    { nome: 'Barraca (2 pessoas)', preco: 5, peso: 100 },
+    { nome: 'Baú (pequeno)', preco: 3, peso: 5 },
+    { nome: 'Baú (médio)', preco: 10, peso: 100 },
+    { nome: 'Baú (grande)', preco: 20, peso: 400 },
+    { nome: 'Casaco de pele', preco: 5, peso: 20 },
+    { nome: 'Corrente (10’)', preco: 25, peso: 40 },
+    { nome: 'Escada (10’)', preco: 5, peso: 10 },
+    { nome: 'Grimório (100 pg)', preco: 25, peso: 100 },
+    { nome: 'Instrumento musical', preco: 10, peso: 10 },
+    { nome: 'Pá', preco: 2, peso: 5 },
+    { nome: 'Pé de cabra', preco: 3, peso: 5 },
+    { nome: 'Picareta', preco: 3, peso: 10 },
+    { nome: 'Polia', preco: 5, peso: 20 },
+    { nome: 'Rede', preco: 5, peso: 20 },
+    { nome: 'Serra', preco: 1, peso: 5 },
+    { nome: 'Símbolo Sagrado', preco: 25, peso: 5 },
+    { nome: 'Vara de exploração', preco: 1, peso: 20 },
+    { nome: 'Vara de pescaria', preco: 5, peso: 5 },
+    { nome: 'Água benta (frasco)', preco: 25 },
+    { nome: 'Agulha (1’’)', preco: 1 },
+    { nome: 'Alicate', preco: 2 },
+    { nome: 'Algema (par)', preco: 15 },
+    { nome: 'Ampulheta (pequena, 10 min)', preco: 10 },
+    { nome: 'Ampulheta (grande, 60 min)', preco: 20 },
+    { nome: 'Apito', preco: 3 },
+    { nome: 'Barbante (rolo de 100’)', preco: 1 },
+    { nome: 'Berrante', preco: 5 },
+    { nome: 'Bolas de gude (6)', preco: 1 },
+    { nome: 'Bolsa de cinto', preco: 3 },
+    { nome: 'Carvão (saco)', preco: 1 },
+    { nome: 'Cera de abelha', preco: 1 },
+    { nome: 'Cobertor', preco: 1 },
+    { nome: 'Corda (50’)', preco: 1 },
+    { nome: 'Corda especial (50’)', preco: 10 },
+    { nome: 'Dados (2 unidades)', preco: 1 },
+    { nome: 'Espelho (pequeno)', preco: 5 },
+    { nome: 'Estacas de madeira (3)', preco: 1 },
+    { nome: 'Estrepes (bolsa com 10)', preco: 1 },
+    { nome: 'Frasco de vidro (1 qt)', preco: 1 },
+    { nome: 'Gancho', preco: 25 },
+    { nome: 'Gazua', preco: 20 },
+    { nome: 'Giz', preco: 1 },
+    { nome: 'Lampião', preco: 10 },
+    { nome: 'Lupa', preco: 10 },
+    { nome: 'Mochila', preco: 5 },
+    { nome: 'Óleo (frasco)', preco: 2 },
+    { nome: 'Odre', preco: 1 },
+    { nome: 'Panela de ferro', preco: 1 },
+    { nome: 'Papiro (uma unidade)', preco: 5 },
+    { nome: 'Pinos de ferro (12)', preco: 1 },
+    { nome: 'Pederneira', preco: 2 },
+    { nome: 'Porta mapas', preco: 1 },
+    { nome: 'Ração, 7 dias (simples)', preco: 3 },
+    { nome: 'Ração, 7 dias (especial)', preco: 15 },
+    { nome: 'Roupa comum', preco: 1 },
+    { nome: 'Roupa nobre', preco: 25 },
+    { nome: 'Saco de dormir', preco: 1 },
+    { nome: 'Saco grande (600 cn)', preco: 2 },
+    { nome: 'Saco pequeno (200 cn)', preco: 1 },
+    { nome: 'Sino', preco: 1 },
+    { nome: 'Tesoura', preco: 1 },
+    { nome: 'Tinta (frasqueta) e pena', preco: 5 },
+    { nome: 'Tochas (6)', preco: 1 },
+    { nome: 'Velas (12)', preco: 1 }
+];
+
+const armaduras = [
+    { nome: 'Sem', preco: 0, bonus: 10, nota: '-', peso: '-', CA: 9 },
+    { nome: 'Couro simples', preco: 10, bonus: 1, nota: 'couro simples de animais comuns', peso: 100, CA: 8 },
+    { nome: 'Couro fervido', preco: 20, bonus: 2, nota: 'couro feito de forma especializada', peso: 200, CA: 7 },
+    { nome: 'Lamelar', preco: 40, bonus: 3, nota: 'couro fervido e lâminas de metal', peso: 300, CA: 6 },
+    { nome: 'Anelar', preco: 80, bonus: 4, nota: 'couro fervido e anéis de metal', peso: 400, CA: 5 },
+    { nome: 'Segmentada', preco: 100, bonus: 5, nota: 'couro fervido e placas de metal', peso: 500, CA: 4 },
+    { nome: 'Couraça', preco: 200, bonus: 6, nota: 'couro fervido, anelar e placas de metal', peso: 600, CA: 3 },
+    { nome: 'Escudo', preco: 10, bonus: 1, nota: 'Feitos de madeira ou metal', peso: 100, CA: 1 },
+];
+
+const armas = [
+    { nome: 'Adaga', preco: 3, peso: 10, categoria: 'Armas simples', dano: 'd4' },
+    { nome: 'Machadinha', preco: 1, peso: 30, categoria: 'Armas simples', dano: 'd4' },
+    { nome: 'Cajado', preco: 2, peso: 30, categoria: 'Médias', dano: 'd8' },
+    { nome: 'Clava', preco: 1, peso: 40, categoria: 'Médias', dano: 'd8' },
+    { nome: 'Funda', preco: 1, peso: 1, categoria: 'Médias', dano: 'd8' },
+    { nome: 'Azagaia', preco: 2, peso: 20, categoria: 'Armas leves', dano: 'd6' },
+    { nome: 'Espada curta', preco: 7, peso: 30, categoria: 'Armas leves', dano: 'd6' },
+    { nome: 'Maça', preco: 5, peso: 40, categoria: 'Armas leves', dano: 'd6' },
+    { nome: 'Arco curto', preco: 20, peso: 25, categoria: 'Armas leves', dano: 'd6' },
+    { nome: 'Besta leve', preco: 40, peso: 50, categoria: 'Armas leves', dano: 'd6' },
+    { nome: 'Espada longa', preco: 10, peso: 50, categoria: 'Armas médias', dano: 'd8' },
+    { nome: 'Lança', preco: 7, peso: 50, categoria: 'Armas médias', dano: 'd8' },
+    { nome: 'Machado de batalha', preco: 7, peso: 70, categoria: 'Armas médias', dano: 'd8' },
+    { nome: 'Martelo de batalha', preco: 7, peso: 70, categoria: 'Armas médias', dano: 'd8' },
+    { nome: 'Arco longo', preco: 50, peso: 50, categoria: 'Armas médias', dano: 'd8' },
+    { nome: 'Besta', preco: 50, peso: 80, categoria: 'Armas médias', dano: 'd8' },
+    { nome: 'Alabarda', preco: 30, peso: 120, categoria: 'Armas grandes', dano: 'd10' },
+    { nome: 'Martelo de guerra', preco: 15, peso: 150, categoria: 'Armas grandes', dano: 'd10' },
+    { nome: 'Machado de guerra', preco: 15, peso: 150, categoria: 'Armas grandes', dano: 'd10' },
+    { nome: 'Montante', preco: 30, peso: 100, categoria: 'Armas grandes', dano: 'd10' },
+];
+
 
 let alinhamentos = ["Caotico", "Neutro", "Ordeiro"];
 let presenca = " e sua presença inspiradora aumenta 2 no moral de seus auxiliares.";
 let magia = `Pode conjurar a magia ${magias[(rolarDados(1, 12) - 1)]}`;
-let especializacao = ` e especialista no uso de ${armas[(rolarDados(1, 20) - 1)]}.`;
+let especializacao = ` É especialista no uso de ${armas[(rolarDados(1, 20) - 1)].nome}.`;
 let investigacao = "Possui grande habilidade de nvestigação";
 let marcaArcana = ` mas como efeito colateral ${marcas[(rolarDados(1, 20) - 1)]}.`;
-let pericias = ["Acurácia", `usar ${armas[(rolarDados(1, 20) - 1)]}`, "Arcanismo", "Decifrar", "Escalar", "Esconder", "Furtividade", "Idioma", "Sobressaltar", "Punga"];
+let pericias = ["Acurácia", `usar ${armas[(rolarDados(1, 20) - 1)].nome}`, "Arcanismo", "Decifrar", "Escalar", "Esconder", "Furtividade", "Idioma", "Sobressaltar", "Punga"];
 let pericia = ` e é perito em ${pericias[(rolarDados(1, 10) - 1)]}.`;
 let traco = tracos[(rolarDados(1, 36) - 1)];
 
@@ -467,6 +546,8 @@ ${traco}
 `;
 const idioma = itensAleatorios(linguas, idiomas);
 const nomeChar = `${itensAleatorios(nomes, 1)} '${itensAleatorios(codinome, 1)}' ${itensAleatorios(sobrenomes, 1)}`
+const ouro = (rolarDados(3, 6) * 10);
+
 
 console.log(maiorAtributo);
 console.log(atributos);
@@ -476,6 +557,8 @@ console.log(vida);
 console.log(alinhamento);
 console.log(anotacoes);
 console.log(idioma);
+console.log(ouro);
+
 
 
 
