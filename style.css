@@ -18,7 +18,7 @@ body {
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
+    max-width: 90%;
     padding: 20px;
     background-color: rgba(199, 199, 199, 0.4);
     box-shadow: 2px 2px 8px black;
@@ -48,4 +48,7 @@ body {
     background-color: rgb(232, 232, 232);
     box-shadow: 2px 2px 8px black;
     padding: 2px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
 }
