@@ -9,6 +9,7 @@ body {
 .personagem {
     width: 30%;
     padding: 20px;
+    min-width: 400px;
     text-align: center;
     box-shadow: 2px 2px 6px black;
 }
