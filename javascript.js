@@ -634,4 +634,3 @@ if (escudo != null) {
 
 let classeArmadura = `${ca1}(${ca2})`;
 
-console.log(escudo);
