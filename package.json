@@ -1,0 +1,27 @@
+{
+  "name": "gerador-d20age",
+  "version": "1.0.0",
+  "description": "Gerador de personagens para D20Age RPG",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danilobs31/gerador-d20age.git"
+  },
+  "keywords": [
+    "RPG",
+    "nodejs"
+  ],
+  "author": "Danilo Borges",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danilobs31/gerador-d20age/issues"
+  },
+  "homepage": "https://github.com/danilobs31/gerador-d20age#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
